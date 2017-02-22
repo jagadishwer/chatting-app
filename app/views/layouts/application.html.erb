@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChattingApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+  <header>
+    <%= yield :sidenav %>
+  </header>
+
+   <main>
+     <div class="container">
+       <%= yield %>
+     </div>
+   </main>
+
+
+
+
+    <%= javascript_include_tag (current_login ? 'application' : 'application_before_sign_in'), 'data-turbolinks-track': 'reload' %>
+    <%= yield :javascripts %>
+  </body>
+</html>

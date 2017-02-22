@@ -1,0 +1,25 @@
+
+  <div class="row" data-participant="<%= params[:p].to_s %>">
+    <div class="col s12 messageList" >
+      <p><%=params[:p].to_s%></p>
+      <ul class="messages">
+        <%=render messages, viewer: current_account.id%>
+      </ul>
+    </div>
+
+    <div class="col s12 messageInput">
+      <%=form_for :message, html: {remote:true} do |f|%>
+          <div class="row">
+            <div class="col s10">
+                  <%=f.hidden_field :participant, value: params[:p] %>
+                  <%= f.text_area :text%>
+            </div>
+            <div class="cal s2">
+                    <%= f.submit 'send', class:"btn green"%>
+            </div>
+          </div>
+
+      <%end%>
+    </div>
+  </div>
+

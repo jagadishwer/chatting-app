@@ -1,0 +1,50 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$container-height :    60vw;
+$message-inputbox-height: 100px;
+
+@mixin cal_width($a, $b){
+  max-width: -webkit-calc(#{$a} - #{$b});
+  max-width:    -moz-calc(#{$a} - #{$b});
+  max-width:         calc(#{$a} - #{$b});
+}
+@mixin cal_height($a, $b){
+  height: -webkit-calc(#{$a} - #{$b});
+  height:    -moz-calc(#{$a} - #{$b});
+  height:         calc(#{$a} - #{$b});
+}
+
+.container{
+  margin: 0 auto 0 350px;
+  height: $container-height;
+  @include cal_width(100%,300px);
+  .col{ overflow: scroll;}
+  .accountListCol{height: $container-height;}
+
+  .messageInput{
+    height: $message-inputbox-height;
+
+  }
+
+  .messageList{
+    @include cal_height($container-height, $message-inputbox-height);
+    li.self-message{
+      background-color: aliceblue;
+      border-radius: 10px;
+      text-align: right;
+      margin: 10px;
+      margin-left: 40%;
+      padding: 10px;
+    }
+    li.other{
+      background-color: #aafff3;
+      border-radius: 10px;
+      margin: 10px;
+      margin-right: 40%;
+      padding: 10px;
+    }
+  }
+
+}

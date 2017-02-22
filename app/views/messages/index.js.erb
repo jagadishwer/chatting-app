@@ -1,0 +1,2 @@
+$('#messages-pannel').html("<%= j render partial: 'messages/messages', locals:{messages: @messages}%>");
+$("body .messageList").animate({ scrollTop: $("body .messageList")[0].scrollHeight }, 1000);

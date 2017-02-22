@@ -1,0 +1,23 @@
+<% content_for :sidenav do %>
+    <ul id="slide-out" class="side-nav fixed">
+      <li><div class="userView">
+        <div class="background blue">
+        </div>
+        <a href="#!user"></a>
+        <a href="#!name"><span class="white-text name"><%=current_account.name%></span></a>
+        <a href="#!email"><span class="white-text email"><%=current_account.email%></span></a>
+        <%= link_to('Logout', destroy_login_session_path, :method => :delete, class: "red-text email") %>
+      </div></li>
+
+       <%=render @accounts%>
+
+
+    </ul>
+
+<%end%>
+
+<div class="row" >
+  <div class="col s12 m10", id="messages-pannel">
+    <h5>Welcome to chatting app</h5>
+  </div>
+</div>
